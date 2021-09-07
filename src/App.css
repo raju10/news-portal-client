@@ -1,1 +1,6 @@
+.homes .container {
+  background-color: white !important;
 
+  overflow-y: auto;
+  padding-left: 2%;
+}

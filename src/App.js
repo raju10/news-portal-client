@@ -12,7 +12,7 @@ import SideNav, {
 } from "@trendmicro/react-sidenav";
 
 import "@trendmicro/react-sidenav/dist/react-sidenav.css";
-import News from "./Component/News/News/News";
+
 import Admain from "./Component/Admain/Admain/Admain";
 import AllNews from "./Component/News/News/AllNews";
 import Navbar from "./Component/Navigation/Navbar/Navbar";
@@ -21,6 +21,7 @@ import Newss from "./Component/News/News/Newss";
 import SelectedCategory from "./Component/News/SelectedCategory/SelectedCategory";
 import Login from "./Component/Firebase/Login/Login/Login";
 import PrivateRoute from "./Component/Firebase/Login/PrivateRoute/PrivateRoute";
+import MakeAdmain from "./Component/Admain/Admain/MakeAdmain/MakeAdmain";
 // navbar close
 
 export const UseProductContext = createContext();
@@ -30,6 +31,7 @@ function App() {
   const [news, setNews] = useState([]);
   const [selcNews, setSelcNews] = useState([]);
   const [loginUser, setLoginUser] = useState({});
+
   return (
     <UserContext.Provider value={[loginUser, setLoginUser]}>
       <UseSelcNewsContext.Provider value={[selcNews, setSelcNews]}>
@@ -60,9 +62,12 @@ function App() {
               <Route path="/all-news/:catagorys">
                 <AllNews></AllNews>
               </Route>
-              <Route path="/admain">
+              <PrivateRoute path="/admain">
                 <Admain></Admain>
-              </Route>
+              </PrivateRoute>
+              <PrivateRoute path="/make-admain">
+                <MakeAdmain></MakeAdmain>
+              </PrivateRoute>
               <Route path="/nav">
                 <Navbar></Navbar>
               </Route>

@@ -1,8 +1,10 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
+import { UserContext } from "../../../../App";
 
 const Dataa = ({ datas }) => {
+  const [loginUser, setLoginUser] = useContext(UserContext);
   const [imgUrl, setImgUrl] = useState(null);
   console.log("imgUrl", imgUrl);
   const {
@@ -12,10 +14,11 @@ const Dataa = ({ datas }) => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    const allData = { ...datas, data, imgUrl };
+    const allData = { ...datas, data, imgUrl, loginUser };
     console.log(allData);
+    // https://intense-anchorage-50845.herokuapp.com
     axios
-      .post("http://localhost:1000/news", allData)
+      .post("https://intense-anchorage-50845.herokuapp.com/news", allData)
 
       .then((data) => {
         console.log(data);

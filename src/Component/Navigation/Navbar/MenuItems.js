@@ -2,7 +2,15 @@ import { NavDropdown } from "react-bootstrap";
 import { Link, NavLink } from "react-router-dom";
 import "./MenuItems.css";
 export default [
-  { id: 1, title: <Link to="/home">Home</Link>, cName: "nav-link" },
+  {
+    id: 1,
+    title: (
+      <Link to="/home" style={{ color: "white", textDecoration: "none" }}>
+        Home
+      </Link>
+    ),
+    cName: "nav-link",
+  },
 
   { id: 2, title: "About", cName: "nav-link" },
   {
@@ -27,6 +35,22 @@ export default [
     ),
     cName: "nav-link",
   },
-  { id: 4, title: "Contact Us", cName: "nav-link" },
-  { id: 5, title: "Feedback", cName: "nav-link" },
+  {
+    id: 4,
+    title: (
+      <Link to="/admain" style={{ color: "white", textDecoration: "none" }}>
+        Admain
+      </Link>
+    ),
+    cName: "nav-link",
+  },
+  {
+    id: 5,
+    title: (
+      <Link to="/login" style={{ color: "white", textDecoration: "none" }}>
+        Login
+      </Link>
+    ),
+    cName: "nav-link",
+  },
 ];

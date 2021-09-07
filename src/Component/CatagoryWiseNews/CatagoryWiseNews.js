@@ -11,7 +11,13 @@ const CatagoryWiseNews = ({ newss, catagory }) => {
   return (
     <>
       <div className="all_heading_name">
-        <button className={catagory === "news" && "color_Change"}>
+        <button
+          className={
+            (catagory === "news" && "catagory_color_Change") ||
+            (catagory === "sports" && "sports_catagory_color_Change") ||
+            (catagory === "health" && "health_catagory_color_Change")
+          }
+        >
           {" "}
           {catagory}
         </button>
@@ -57,7 +63,13 @@ const CatagoryWiseNews = ({ newss, catagory }) => {
                   </small>
                   <Link to={`/${catagorys}/id`}>
                     <button
-                      className="read_more_btn"
+                      className={
+                        (news.catagory === "news" && "reade_more_news_btn") ||
+                        (news.catagory === "sports" &&
+                          "reade_more_sports_btn") ||
+                        (news.catagory === "health" && "reade_more_health_btn")
+                      }
+                      // className="read_more_btn"
                       onClick={() =>
                         setSelcNews({
                           ...selcNews,

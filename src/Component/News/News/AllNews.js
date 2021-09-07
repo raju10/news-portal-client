@@ -8,6 +8,7 @@ import NavBar from "../../Home/NavBar/NavBar";
 import OurAllCatagorys from "../../Home/OurAllCatagorys/OurAllCatagorys";
 import AllTopics from "../AllTopics/AllTopics";
 import "./AllNews.css";
+import SelectCategoryWisesNews from "./SelectCategoryWisesNews/SelectCategoryWisesNews";
 const AllNews = () => {
   const [news, setNews] = useContext(UseProductContext);
   console.log("news", news);
@@ -34,12 +35,12 @@ const AllNews = () => {
   const [allFindNews, setAllFindProduct] = useState([]);
   console.log("allFindProduct", allFindNews);
   useEffect(() => {
-    fetch(`http://localhost:1000/news`)
+    fetch(`https://intense-anchorage-50845.herokuapp.com/news`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
         // setProduct(data.rasult);
-        setNews(data.rasult);
+
         const filterAllNews = data.rasult.filter(
           (pro) => pro.catagory === catagorys
         );
@@ -49,10 +50,28 @@ const AllNews = () => {
         /////
       });
   }, [catagorys]);
-
+  const thisCatagories = [
+    "bangladesh",
+    "asia",
+    "cricket",
+    "tenis",
+    "football",
+    "hocky",
+  ];
   return (
     <div>
       <NavBar></NavBar>
+      <div className="container">
+        {" "}
+        {thisCatagories.map((sCatagory) => (
+          <SelectCategoryWisesNews
+            catagory={sCatagory}
+            findNews={allFindNews.filter(
+              (n) => n.data.thisCatagory === sCatagory
+            )}
+          ></SelectCategoryWisesNews>
+        ))}
+      </div>
     </div>
   );
 };

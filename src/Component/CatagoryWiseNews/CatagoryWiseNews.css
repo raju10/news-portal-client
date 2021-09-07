@@ -1,5 +1,12 @@
-.color_Change {
+.catagory_color_Change {
   background-color: rgba(216, 8, 8, 0.671) !important;
+}
+.sports_catagory_color_Change {
+  background-color: #0288d1cf !important;
+  border-bottom: 2px solid #0288d1cf !important;
+}
+.health_catagory_color_Change {
+  background-color: #8bc34a !important;
 }
 .all_heading_name {
   border-bottom: 2px solid #333333;
@@ -10,4 +17,48 @@
   background-color: #333333;
   color: white;
   border: none;
+}
+.read_more_btn {
+  padding: 5px 13px;
+  background-color: #0288d1cf;
+  color: white;
+  font-size: 11px;
+  font-weight: 500;
+  border: none;
+  border-radius: 3px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.reade_more_news_btn {
+  padding: 5px 13px;
+  background-color: rgba(216, 8, 8, 0.671) !important;
+  color: white;
+  font-size: 11px;
+  font-weight: 500;
+  border: none;
+  border-radius: 3px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.reade_more_sports_btn {
+  padding: 5px 13px;
+  background-color: #0288d1cf !important;
+  color: white;
+  font-size: 11px;
+  font-weight: 500;
+  border: none;
+  border-radius: 3px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.reade_more_health_btn {
+  padding: 5px 13px;
+  background-color: #8bc34a !important;
+  color: white;
+  font-size: 11px;
+  font-weight: 500;
+  border: none;
+  border-radius: 3px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }

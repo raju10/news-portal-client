@@ -18,7 +18,7 @@ const Newss = () => {
   console.log("findProduct", findNews);
 
   useEffect(() => {
-    fetch("http://localhost:1000/news")
+    fetch("https://intense-anchorage-50845.herokuapp.com/news")
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
