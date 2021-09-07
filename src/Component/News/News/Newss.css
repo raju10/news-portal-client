@@ -1,0 +1,50 @@
+.date_catagory {
+  display: flex;
+  padding: 2%;
+}
+.date_catagory small {
+  color: #0288d1eb;
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  padding-right: 5%;
+}
+.date_catagory span {
+  color: #635e5e;
+  font-size: 14px;
+  padding-top: 1%;
+  padding-left: 3%;
+}
+.catagory_box p {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 22px;
+}
+.read_more {
+  display: flex;
+  justify-content: space-between;
+}
+.read_more_btn {
+  padding: 5px 13px;
+  background-color: #0288d1cf;
+  color: white;
+  font-size: 11px;
+  font-weight: 500;
+  border: none;
+  border-radius: 3px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.read_more_btn:hover {
+  background-color: #111;
+}
+.catagory_box {
+  border: 1px solid #80808036;
+  box-shadow: 2px 2px 6px #80808082;
+}
+.read_more small {
+  color: gray;
+  font-size: 13px;
+  font-family: monospace;
+}

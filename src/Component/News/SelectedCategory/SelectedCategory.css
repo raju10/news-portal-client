@@ -1,0 +1,9 @@
+.seltedCatagory p {
+  color: gray;
+  font-size: 12px;
+}
+.selceted_news_description {
+  padding-left: 4%;
+  padding-top: 4%;
+  padding-bottom: 4%;
+}
