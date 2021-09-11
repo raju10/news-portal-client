@@ -105,6 +105,7 @@ const OurAllCatagorys = () => {
                     <div className="our_all_category_wise_news">
                       {catagories.map((catagory) => (
                         <CatagoryWiseNews
+                          key={Math.random()}
                           catagory={catagory}
                           newss={news.filter(
                             (n) => n.catagory === catagory.news
@@ -134,6 +135,7 @@ const OurAllCatagorys = () => {
                     <div className="our_all_category_wise_sports">
                       {catagories.map((catagory) => (
                         <CatagoryWiseNews
+                          key={Math.random()}
                           catagory={catagory}
                           newss={news.filter(
                             (n) => n.catagory === catagory.sports
@@ -165,6 +167,7 @@ const OurAllCatagorys = () => {
                     >
                       {catagories.map((catagory) => (
                         <CatagoryWiseNews
+                          key={Math.random()}
                           catagory={catagory}
                           newss={news.filter(
                             (n) => n.catagory === catagory.health

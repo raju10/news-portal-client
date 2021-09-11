@@ -9,8 +9,9 @@ const SelectCategoryWisesNews = ({ catagory, findNews }) => {
   return (
     <div style={{ overflowX: "hidden" }}>
       <div className="row">
-        {findNews.map((news, key = news._id) => (
+        {findNews.map((news) => (
           <div
+            key={Math.random()}
             data-aos="fade-left"
             className="col-sm-6 col-md-4 col-lg-4 col-xl-3 "
           >

@@ -41,12 +41,9 @@ const AllNews = () => {
         // setProduct(data.rasult);
 
         const filterAllNews = data.rasult.filter(
-          (pro, key = pro._id) => pro.catagory === catagorys
+          (pro) => pro.catagory === catagorys
         );
         setAllFindProduct(filterAllNews);
-        // /////
-
-        /////
       });
   }, [catagorys]);
   const thisCatagories = [
@@ -67,6 +64,7 @@ const AllNews = () => {
         <div className="all_news_container">
           {thisCatagories.map((sCatagory) => (
             <SelectCategoryWisesNews
+              key={Math.random()}
               catagory={sCatagory}
               findNews={allFindNews.filter(
                 (n) => n.data.thisCatagory === sCatagory

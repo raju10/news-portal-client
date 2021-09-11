@@ -48,6 +48,7 @@ const Ards = () => {
         <div className="row">
           {ourBrandsIcon.map((icon) => (
             <div
+              key={Math.random()}
               className="col-sm-3 col-6 "
               style={{
                 display: "flex",

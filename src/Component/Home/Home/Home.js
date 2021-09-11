@@ -1,4 +1,5 @@
 import React from "react";
+import { FaArrowUp } from "react-icons/fa";
 import HeaderNavbar from "../../Navigation/HeaderNavbar/HeaderNavbar";
 
 import Ards from "../Ards/Ards";
@@ -18,6 +19,7 @@ const Home = () => {
       <OurAllCatagorys></OurAllCatagorys>
       <Ards></Ards>
       <Footer></Footer>
+      {/* <FaArrowUp/> */}
     </div>
   );
 };

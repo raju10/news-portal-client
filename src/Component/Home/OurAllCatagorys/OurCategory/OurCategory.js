@@ -58,7 +58,7 @@ const OurCategory = () => {
           >
             {" "}
             <h6 style={{ textDecoration: "none" }}>
-              Hipster Yoga at the End of the World
+              The Features of the Best Ergonomic Keyboard
             </h6>{" "}
           </Link>
         </div>

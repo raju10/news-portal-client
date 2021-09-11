@@ -53,30 +53,19 @@ const HeaderNavbar = () => {
                   <Link to="/all-news/sports">Sports </Link>
                 </NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.3">
-                  {" "}
                   <Link to="/all-news/health">Health </Link>
                 </NavDropdown.Item>
                 <NavDropdown.Divider />
-              </NavDropdown>{" "}
+              </NavDropdown>
               <Nav style={{ float: "right", marginLeft: "5%" }}>
-                {" "}
-                <Nav.Link className="">
-                  {" "}
-                  <a
-                    href="https://www.facebook.com/arifulislam.raju.543/"
-                    className="navbar_social_style"
-                  >
-                    <FaFacebook />
-                  </a>
+                <Nav.Link
+                  className=""
+                  href="https://www.facebook.com/arifulislam.raju.543/"
+                >
+                  <FaFacebook />
                 </Nav.Link>
-                <Nav.Link className="">
-                  {" "}
-                  <a
-                    href="https://github.com/raju10"
-                    className="navbar_social_style"
-                  >
-                    <FaGithub />
-                  </a>
+                <Nav.Link className="" href="https://github.com/raju10">
+                  <FaGithub />
                 </Nav.Link>
               </Nav>
             </Nav>

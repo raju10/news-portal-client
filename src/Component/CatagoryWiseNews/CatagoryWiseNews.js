@@ -13,6 +13,7 @@ const CatagoryWiseNews = ({ newss, catagory }) => {
     <div>
       {newss.map((news) => (
         <div
+          key={Math.random()}
           style={{
             display: "flex",
             margin: "6%",
@@ -69,6 +70,7 @@ const CatagoryWiseNews = ({ newss, catagory }) => {
                       selctedNewsImg: news.imgUrl,
                       description: news.data.description,
                       title: news.data.title,
+                      author: news.data.author,
                     })
                   }
                 >

@@ -14,21 +14,16 @@ import "@trendmicro/react-sidenav/dist/react-sidenav.css";
 import { Link } from "react-router-dom";
 import { UseProductContext, UserContext } from "../../../App";
 import "./NavBar.css";
-const NavBar = () => {
+import axios from "axios";
+import ShortMail from "../../Admain/ShortMail";
+const NavBar = ({ isAdmain }) => {
   const [news, setNews] = useContext(UseProductContext);
   const [loginUser, setLoginUser] = useContext(UserContext);
 
-  const [adddAdmain, setAddAdmain] = useState([]);
-  console.log("adddAdmain", adddAdmain);
   /////////////
-  useEffect(() => {
-    fetch("http://localhost:1000/addAdmain")
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data.rasult);
-        setAddAdmain(data.rasult);
-      });
-  }, []);
+  /////////////
+
+  ////////////
   ////////////
   return (
     <div>
@@ -173,37 +168,34 @@ const NavBar = () => {
             </NavItem>
           </NavItem>
           {/* news part close */}
-          {adddAdmain.map((admain) => (
+
+          {isAdmain && (
             <>
-              {admain.email === loginUser.loginUserEmail && (
-                <>
-                  <NavItem eventKey="admain">
-                    <NavIcon>
-                      <Link to="/admain">
-                        {" "}
-                        <FaUserLock style={{ fontSize: "1.75em" }} />
-                      </Link>
-                    </NavIcon>
-                    <NavText>
-                      <Link to="/admain">Admin</Link>
-                    </NavText>
-                  </NavItem>
-                  <NavItem eventKey="makeAdmain">
-                    <NavIcon>
-                      <Link to="/make-admain">
-                        {" "}
-                        <FaUserShield style={{ fontSize: "1.75em" }} />
-                      </Link>
-                    </NavIcon>
-                    <NavText>
-                      {" "}
-                      <Link to="/make-admain">Make Admin</Link>
-                    </NavText>
-                  </NavItem>
-                </>
-              )}
+              <NavItem eventKey="admain">
+                <NavIcon>
+                  <Link to="/admain">
+                    {" "}
+                    <FaUserLock style={{ fontSize: "1.75em" }} />
+                  </Link>
+                </NavIcon>
+                <NavText>
+                  <Link to="/admain">Admin</Link>
+                </NavText>
+              </NavItem>
+              <NavItem eventKey="makeAdmain">
+                <NavIcon>
+                  <Link to="/make-admain">
+                    {" "}
+                    <FaUserShield style={{ fontSize: "1.75em" }} />
+                  </Link>
+                </NavIcon>
+                <NavText>
+                  {" "}
+                  <Link to="/make-admain">Make Admin</Link>
+                </NavText>
+              </NavItem>
             </>
-          ))}
+          )}
         </SideNav.Nav>
       </SideNav>
     </div>

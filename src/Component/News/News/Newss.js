@@ -38,8 +38,9 @@ const Newss = () => {
         <div className="row newss_container">
           <div className="col-sm-12 col-md-7 col-lg-8 col-xl-9">
             <div className="row" style={{ marginTop: "5%" }}>
-              {findNews.map((news, key = news._id) => (
+              {findNews.map((news) => (
                 <div
+                  key={Math.random()}
                   className="col-sm-6 col-md-6 col-lg-4 "
                   style={{ paddingBottom: "3%" }}
                 >
@@ -96,6 +97,7 @@ const Newss = () => {
                                 selctedNewsImg: news.imgUrl,
                                 description: news.data.description,
                                 title: news.data.title,
+                                author: news.data.author,
                               })
                             }
                           >

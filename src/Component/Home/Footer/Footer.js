@@ -7,6 +7,7 @@ import footer_sports_img from "../../../Image/footer_img/s.jpg";
 import footer_travel_img from "../../../Image/footer_img/most_discussed/travel.jpg";
 import footer_fashion_img from "../../../Image/footer_img/most_discussed/herald092-74x55.jpg";
 import "./Footer.css";
+import { animateScroll as scroll } from "react-scroll";
 const Footer = () => {
   return (
     <div style={{ backgroundColor: "#222222" }}>
@@ -33,7 +34,12 @@ const Footer = () => {
                   and an easy-to-use module builder for unlimited layout
                   combinations
                 </p>
-                <button className="read_more_btn">Find out more</button>
+                <button
+                  className="read_more_btn"
+                  onClick={() => scroll.scrollToTop()}
+                >
+                  Find out more
+                </button>
               </div>
             </div>
             <div className="col-sm-12 col-md-6 col-lg-4 col-xl-3">

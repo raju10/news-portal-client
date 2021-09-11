@@ -14,7 +14,7 @@ const SelectedCategory = () => {
       <div className="container ">
         <div className="selected_category_container">
           <div className="row">
-            <div className="col-sm-9">
+            <div className="col-sm-12 col-md-7 col-lg-8 col-xl-9">
               <div className="seltedCatagory">
                 <small
                   style={{
@@ -27,6 +27,11 @@ const SelectedCategory = () => {
                 >
                   {selcNews.catagory}
                 </small>
+                <h6
+                  style={{ padding: "5px 0", color: "#111", fontSize: "17px" }}
+                >
+                  Autror : {selcNews.author}
+                </h6>
                 <h4>{selcNews.title}</h4>
                 <div
                   style={{
@@ -75,7 +80,7 @@ const SelectedCategory = () => {
                 </div>
               </div>
             </div>
-            <div className="col-sm-3">
+            <div className="col-sm-12 col-md-5 col-lg-4 col-xl-3">
               <AllTopics></AllTopics>
             </div>
           </div>

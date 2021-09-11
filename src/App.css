@@ -16,6 +16,9 @@
 .selected_category_container.container {
   padding-left: 2%;
 }
+.admain_container {
+  padding-left: 10% !important;
+}
 @media (max-width: 775px) {
   .newss_container {
     padding-left: 10% !important;
@@ -29,6 +32,9 @@
 @media (max-width: 660px) {
   .all_news_container {
     padding-left: 10% !important;
+  }
+  .admain_container {
+    padding-left: 20% !important;
   }
 }
 @media (max-width: 502px) {
@@ -50,6 +56,6 @@ div {
     padding-left: 10%;
   }
   .selected_category_container {
-    padding-left: 20%;
+    padding-left: 10%;
   }
 }

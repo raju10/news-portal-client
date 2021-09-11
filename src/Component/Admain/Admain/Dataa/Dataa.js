@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
+import Swal from "sweetalert2";
 import { UserContext } from "../../../../App";
 
 const Dataa = ({ datas }) => {
@@ -13,7 +14,7 @@ const Dataa = ({ datas }) => {
     watch,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => {
+  const onSubmit = (data, e) => {
     const allData = { ...datas, data, imgUrl, loginUser };
     console.log(allData);
     // https://intense-anchorage-50845.herokuapp.com
@@ -22,10 +23,14 @@ const Dataa = ({ datas }) => {
 
       .then((data) => {
         console.log(data);
+        if (data) {
+          Swal.fire("Your post creating succesfully", "Thnq", "success");
+        }
       })
       .catch((error) => {
         console.error(error);
       });
+    e.target.reset();
   };
   ///img upload functions open////
   const handelImgUpload = (e) => {
@@ -70,7 +75,7 @@ const Dataa = ({ datas }) => {
           (datas.catagory === "sports" && (
             <>
               <select
-                className="form-control w-50"
+                className="form-control w-75"
                 {...register("thisCatagory", { required: true })}
               >
                 <option disabled={true} value="Not set">
@@ -89,7 +94,7 @@ const Dataa = ({ datas }) => {
           (datas.catagory === "health" && (
             <>
               <select
-                className="form-control w-50"
+                className="form-control w-75"
                 {...register("thisCatagory", { required: true })}
               >
                 <option disabled={true} value="Not set">
@@ -105,16 +110,24 @@ const Dataa = ({ datas }) => {
           ))}
         <input
           {...register("title", { required: true })}
-          className="form-control w-50"
+          className="form-control w-75"
           placeholder="Title"
         />
 
         {errors.title && <span>This field is required</span>}
         <br />
+        <input
+          {...register("author", { required: true })}
+          defaultValue={loginUser.loginUserName}
+          className="form-control w-75"
+          placeholder="Author Name"
+        />
 
+        {errors.author && <span>author is required</span>}
+        <br />
         <textarea
           {...register("description", { required: true })}
-          className="form-control w-50"
+          className="form-control w-75"
           placeholder="Description"
         />
 
