@@ -12,7 +12,7 @@ const MakeAdmain = () => {
   useEffect(() => {
     axios
       .get(
-        `http://localhost:1000/addAdmain/isAdmain/${loginUser.loginUserEmail}`
+        `https://intense-anchorage-50845.herokuapp.com/addAdmain/isAdmain/${loginUser.loginUserEmail}`
       )
       .then(({ data }) => {
         console.log(data);

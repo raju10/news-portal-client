@@ -7,7 +7,7 @@
 
 //   const [news, setNews] = useContext(UseProductContext);
 //   useEffect(() => {
-//     fetch("http://localhost:1000/addAdmain")
+//     fetch("https://intense-anchorage-50845.herokuapp.com/addAdmain")
 //       .then((res) => res.json())
 //       .then((data) => {
 //         console.log(data);

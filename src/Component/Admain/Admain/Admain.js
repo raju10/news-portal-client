@@ -35,10 +35,12 @@ const Admain = () => {
   };
 
   useEffect(() => {
-    axios("http://localhost:1000/addAdmain").then((data) => {
-      console.log(data.rasult);
-      setAddAdmain(data.rasult);
-    });
+    axios("https://intense-anchorage-50845.herokuapp.com/addAdmain").then(
+      (data) => {
+        console.log(data.rasult);
+        setAddAdmain(data.rasult);
+      }
+    );
   }, []);
 
   ////is admain ////
@@ -46,7 +48,7 @@ const Admain = () => {
   useEffect(() => {
     axios
       .get(
-        `http://localhost:1000/addAdmain/isAdmain/${loginUser.loginUserEmail}`
+        `https://intense-anchorage-50845.herokuapp.com/addAdmain/isAdmain/${loginUser.loginUserEmail}`
       )
       .then(({ data }) => {
         console.log(data);
