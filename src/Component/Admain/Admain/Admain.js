@@ -53,8 +53,8 @@ const Admain = () => {
       .then(({ data }) => {
         console.log(data);
         if (data.data.length) {
-          Swal.fire("Now you can to enter my admin pages", "Thnq", "success");
           setIsAdmain(true);
+          Swal.fire("Now you can to enter my admin pages", "Thnq", "success");
         } else {
           setIsAdmain(false);
           Swal.fire({

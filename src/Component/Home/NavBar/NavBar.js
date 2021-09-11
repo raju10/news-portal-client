@@ -9,22 +9,12 @@ import {
 } from "react-icons/fa";
 import SideNav, { NavItem, NavIcon, NavText } from "@trendmicro/react-sidenav";
 
-// Be sure to include styles at some point, probably during your bootstraping
 import "@trendmicro/react-sidenav/dist/react-sidenav.css";
 import { Link } from "react-router-dom";
-import { UseProductContext, UserContext } from "../../../App";
+
 import "./NavBar.css";
-import axios from "axios";
-import ShortMail from "../../Admain/ShortMail";
-const NavBar = ({ isAdmain }) => {
-  const [news, setNews] = useContext(UseProductContext);
-  const [loginUser, setLoginUser] = useContext(UserContext);
 
-  /////////////
-  /////////////
-
-  ////////////
-  ////////////
+const NavBar = () => {
   return (
     <div>
       <SideNav
@@ -169,33 +159,31 @@ const NavBar = ({ isAdmain }) => {
           </NavItem>
           {/* news part close */}
 
-          {isAdmain && (
-            <>
-              <NavItem eventKey="admain">
-                <NavIcon>
-                  <Link to="/admain">
-                    {" "}
-                    <FaUserLock style={{ fontSize: "1.75em" }} />
-                  </Link>
-                </NavIcon>
-                <NavText>
-                  <Link to="/admain">Admin</Link>
-                </NavText>
-              </NavItem>
-              <NavItem eventKey="makeAdmain">
-                <NavIcon>
-                  <Link to="/make-admain">
-                    {" "}
-                    <FaUserShield style={{ fontSize: "1.75em" }} />
-                  </Link>
-                </NavIcon>
-                <NavText>
+          <>
+            <NavItem eventKey="admain">
+              <NavIcon>
+                <Link to="/admain">
                   {" "}
-                  <Link to="/make-admain">Make Admin</Link>
-                </NavText>
-              </NavItem>
-            </>
-          )}
+                  <FaUserLock style={{ fontSize: "1.75em" }} />
+                </Link>
+              </NavIcon>
+              <NavText>
+                <Link to="/admain">Admin</Link>
+              </NavText>
+            </NavItem>
+            <NavItem eventKey="makeAdmain">
+              <NavIcon>
+                <Link to="/make-admain">
+                  {" "}
+                  <FaUserShield style={{ fontSize: "1.75em" }} />
+                </Link>
+              </NavIcon>
+              <NavText>
+                {" "}
+                <Link to="/make-admain">Make Admin</Link>
+              </NavText>
+            </NavItem>
+          </>
         </SideNav.Nav>
       </SideNav>
     </div>
