@@ -1,20 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Footer from "../../../Home/Footer/Footer";
 import AllTopics from "../../AllTopics/AllTopics";
 import "./SelectCategoryWisesNews.css";
 const SelectCategoryWisesNews = ({ catagory, findNews }) => {
-  console.log(catagory, findNews);
+  // console.log(catagory, findNews);
+
   return (
-    <div>
+    <div style={{ overflowX: "hidden" }}>
       <div className="row">
-        {findNews.map((news) => (
-          <div className="col-sm-3">
+        {findNews.map((news, key = news._id) => (
+          <div
+            data-aos="fade-left"
+            className="col-sm-6 col-md-4 col-lg-4 col-xl-3 "
+          >
             {news.data.thisCatagory && (
               <>
-                {" "}
                 <div className="all_heading_name">
                   <button> {catagory}</button>
-                </div>
+                </div>{" "}
                 <Link to={`/news/${news.data.thisCatagory}`}>
                   {" "}
                   <div className="news_catagory">
@@ -46,10 +50,6 @@ const SelectCategoryWisesNews = ({ catagory, findNews }) => {
           </div>
         ))}
       </div>
-
-      {/* <div className="col-sm-3">
-          <AllTopics></AllTopics>
-        </div> */}
     </div>
   );
 };

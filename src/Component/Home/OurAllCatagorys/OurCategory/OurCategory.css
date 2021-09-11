@@ -1,0 +1,89 @@
+.our_catagory_news_containers {
+  background-image: linear-gradient(#0000008a, #38353591, #25161694, #0a0505bd),
+    url("../../../../Image/heared_img/voice3_13-810x540.jpg.webp");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  padding: 20% 20% !important;
+  border-right: 2px solid white !important;
+}
+.our_catagory_news_containers:hover {
+  transform: scale(1.1) !important;
+  transition: transform 0.8s ease-in-out 0.1s !important;
+}
+.our_catagory_sport_containers {
+  background-image: linear-gradient(
+      145deg,
+      #000000ba,
+      #0a0a0abf,
+      #191002a6,
+      #3c320e87
+    ),
+    url("../../../../Image/singlecatagory-img/herald215-990x660.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  padding: 20% 20% !important;
+  border-right: 2px solid white !important;
+}
+.our_catagory_sport_containers:hover {
+  transform: scale(1.1) !important;
+  transition: transform 0.8s ease-in-out 0.1s !important;
+}
+.our_catagory_health_containers {
+  background-image: linear-gradient(
+      400deg,
+      #00000059,
+      #3835357d,
+      #29272791,
+      #080404d1
+    ),
+    url("../../../../Image/our-catagory_img/health.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  padding: 20% 20% !important;
+  border-right: 2px solid white !important;
+}
+.our_catagory_health_containers:hover {
+  transform: scale(1.1) !important;
+  transition: transform 0.8s ease-in-out 0.1s !important;
+}
+/* // */
+.our_catagory_news_containers,
+.our_catagory_sport_containers,
+.our_catagory_health_containers,
+h6 {
+  color: white;
+  font-weight: 500;
+  font-size: 20px !important;
+  font-family: monospace;
+  padding-top: 5%;
+  text-decoration: none !important;
+}
+.our_catagory_news_containers,
+.our_catagory_sport_containers,
+.our_catagory_health_containers,
+button {
+  padding: 3px 15px;
+  font-size: 11px;
+  font-weight: 500;
+  color: white;
+
+  border: none;
+  border-radius: 5px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.our_catagory_news_containers button {
+  background-color: #d80808ab;
+}
+.our_catagory_sport_containers button {
+  background-color: #0288d1;
+}
+.our_catagory_health_containers button {
+  background-color: #8bc34a;
+}

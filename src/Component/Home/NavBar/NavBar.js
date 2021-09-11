@@ -1,26 +1,35 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import {
   FaNewspaper,
   FaHome,
-  FaCalendar,
-  FaShoePrints,
-  FaAndroid,
+  FaUserShield,
+  FaFootballBall,
+  FaUserLock,
+  FaMedkit,
 } from "react-icons/fa";
-import SideNav, {
-  Toggle,
-  Nav,
-  NavItem,
-  NavIcon,
-  NavText,
-} from "@trendmicro/react-sidenav";
+import SideNav, { NavItem, NavIcon, NavText } from "@trendmicro/react-sidenav";
 
 // Be sure to include styles at some point, probably during your bootstraping
 import "@trendmicro/react-sidenav/dist/react-sidenav.css";
 import { Link } from "react-router-dom";
-import { UseProductContext } from "../../../App";
+import { UseProductContext, UserContext } from "../../../App";
 import "./NavBar.css";
 const NavBar = () => {
   const [news, setNews] = useContext(UseProductContext);
+  const [loginUser, setLoginUser] = useContext(UserContext);
+
+  const [adddAdmain, setAddAdmain] = useState([]);
+  console.log("adddAdmain", adddAdmain);
+  /////////////
+  useEffect(() => {
+    fetch("http://localhost:1000/addAdmain")
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data.rasult);
+        setAddAdmain(data.rasult);
+      });
+  }, []);
+  ////////////
   return (
     <div>
       <SideNav
@@ -53,14 +62,30 @@ const NavBar = () => {
               {" "}
               <NavText>
                 {" "}
-                <Link to="/all-news/news">All News </Link>
+                <Link
+                  to="/all-news/news"
+                  style={{ color: "#111", textDecoration: "none" }}
+                >
+                  All News{" "}
+                </Link>
               </NavText>
             </NavItem>
             <NavItem eventKey="charts/linechart">
               {" "}
               <NavText>
                 {" "}
-                <Link to="/news/bangladesh">Bangladesh </Link>
+                <Link to="/news/bangladesh" style={{ color: "#111" }}>
+                  Bangladesh{" "}
+                </Link>
+              </NavText>{" "}
+            </NavItem>
+            <NavItem eventKey="charts/linechart">
+              {" "}
+              <NavText>
+                {" "}
+                <Link to="/news/asia" style={{ color: "#111" }}>
+                  Asia{" "}
+                </Link>
               </NavText>{" "}
             </NavItem>
           </NavItem>
@@ -69,7 +94,7 @@ const NavBar = () => {
           <NavItem eventKey="sports">
             <NavIcon>
               {" "}
-              <FaShoePrints style={{ fontSize: "1.75em" }} />{" "}
+              <FaFootballBall style={{ fontSize: "1.75em" }} />{" "}
             </NavIcon>
 
             <NavText>Sports</NavText>
@@ -77,50 +102,108 @@ const NavBar = () => {
               {" "}
               <NavText>
                 {" "}
-                <Link to="/all-news/sports">All Sports </Link>
+                <Link to="/all-news/sports" style={{ color: "#111" }}>
+                  All Sports{" "}
+                </Link>
               </NavText>
             </NavItem>
             <NavItem eventKey="charts/linechart">
               {" "}
               <NavText>
                 {" "}
-                <Link to="/news/cricket">Ckicket </Link>
+                <Link to="/news/cricket" style={{ color: "#111" }}>
+                  Ckicket{" "}
+                </Link>
               </NavText>{" "}
             </NavItem>
             <NavItem eventKey="charts/linechart">
               {" "}
               <NavText>
                 {" "}
-                <Link to="/news/football">Football </Link>
+                <Link to="/news/football" style={{ color: "#111" }}>
+                  Football{" "}
+                </Link>
               </NavText>{" "}
             </NavItem>
             <NavItem eventKey="charts/linechart">
               {" "}
               <NavText>
                 {" "}
-                <Link to="/news/tenis">Tenis </Link>
+                <Link to="/news/tenis" style={{ color: "#111" }}>
+                  Tenis{" "}
+                </Link>
               </NavText>{" "}
             </NavItem>
           </NavItem>
           {/* sport part close */}
-          <NavItem eventKey="admain">
+          {/* Health part open */}
+          <NavItem eventKey="news">
             <NavIcon>
-              <Link to="/admain">
-                {" "}
-                <FaCalendar style={{ fontSize: "1.75em" }} />
-              </Link>
+              {" "}
+              <FaMedkit style={{ fontSize: "1.75em" }} />{" "}
             </NavIcon>
-            <NavText>Admain</NavText>
-          </NavItem>
-          <NavItem eventKey="makeAdmain">
-            <NavIcon>
-              <Link to="/make-admain">
+
+            <NavText>Health</NavText>
+            <NavItem eventKey="charts/barchart">
+              {" "}
+              <NavText>
                 {" "}
-                <FaAndroid style={{ fontSize: "1.75em" }} />
-              </Link>
-            </NavIcon>
-            <NavText>Make Admain</NavText>
+                <Link to="/all-news/health" style={{ color: "#111" }}>
+                  Health{" "}
+                </Link>
+              </NavText>
+            </NavItem>
+            <NavItem eventKey="charts/linechart">
+              {" "}
+              <NavText>
+                {" "}
+                <Link to="/news/covid" style={{ color: "#111" }}>
+                  Covid{" "}
+                </Link>
+              </NavText>{" "}
+            </NavItem>
+            <NavItem eventKey="charts/linechart">
+              {" "}
+              <NavText>
+                {" "}
+                <Link to="/news/food" style={{ color: "#111" }}>
+                  Food{" "}
+                </Link>
+              </NavText>{" "}
+            </NavItem>
           </NavItem>
+          {/* news part close */}
+          {adddAdmain.map((admain) => (
+            <>
+              {admain.email === loginUser.loginUserEmail && (
+                <>
+                  <NavItem eventKey="admain">
+                    <NavIcon>
+                      <Link to="/admain">
+                        {" "}
+                        <FaUserLock style={{ fontSize: "1.75em" }} />
+                      </Link>
+                    </NavIcon>
+                    <NavText>
+                      <Link to="/admain">Admin</Link>
+                    </NavText>
+                  </NavItem>
+                  <NavItem eventKey="makeAdmain">
+                    <NavIcon>
+                      <Link to="/make-admain">
+                        {" "}
+                        <FaUserShield style={{ fontSize: "1.75em" }} />
+                      </Link>
+                    </NavIcon>
+                    <NavText>
+                      {" "}
+                      <Link to="/make-admain">Make Admin</Link>
+                    </NavText>
+                  </NavItem>
+                </>
+              )}
+            </>
+          ))}
         </SideNav.Nav>
       </SideNav>
     </div>

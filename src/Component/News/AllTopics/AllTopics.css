@@ -1,0 +1,33 @@
+.upcomming_categorys {
+  box-shadow: 0 3px 6px 0 rgb(0 0 0 / 7%);
+  margin-top: 10%;
+  background-color: white;
+  border-radius: 3px;
+}
+.upcomming_categorys h3 {
+  box-shadow: 0 3px 6px 0 rgb(0 0 0 / 7%);
+  font-size: 18px;
+  font-weight: 500;
+  color: #111;
+  padding: 4% 3%;
+  text-align: center;
+}
+.upcomming_categorys_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2% 6%;
+  background-color: #f9f9f9;
+}
+.upcomming_categorys_description {
+  width: 130%;
+  padding-left: 3%;
+}
+.upcomming_categorys_description span {
+  font-size: 13px;
+}
+.upcomming_categorys_description p {
+  font-size: 12px;
+  color: #111;
+  font-weight: 500;
+}

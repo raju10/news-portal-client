@@ -4,6 +4,7 @@ import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 import { UseProductContext } from "../../../App";
 import CatagoryWiseNews from "../../CatagoryWiseNews/CatagoryWiseNews";
+import Footer from "../../Home/Footer/Footer";
 import NavBar from "../../Home/NavBar/NavBar";
 import OurAllCatagorys from "../../Home/OurAllCatagorys/OurAllCatagorys";
 import AllTopics from "../AllTopics/AllTopics";
@@ -11,10 +12,9 @@ import "./AllNews.css";
 import SelectCategoryWisesNews from "./SelectCategoryWisesNews/SelectCategoryWisesNews";
 const AllNews = () => {
   const [news, setNews] = useContext(UseProductContext);
-  console.log("news", news);
+
   //
 
-  const catagories = ["news", "sports"];
   //
   //
   //
@@ -29,8 +29,8 @@ const AllNews = () => {
   const sportsFilter = news.filter((pd) => pd.catagory === "sports");
 
   const newsFilter = news.filter((pd) => pd.catagory === "news");
-  console.log("allNewsFilter", newsFilter);
-  console.log("allSportsFilter", sportsFilter);
+  // console.log("allNewsFilter", newsFilter);
+  // console.log("allSportsFilter", sportsFilter);
 
   const [allFindNews, setAllFindProduct] = useState([]);
   console.log("allFindProduct", allFindNews);
@@ -38,11 +38,10 @@ const AllNews = () => {
     fetch(`https://intense-anchorage-50845.herokuapp.com/news`)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         // setProduct(data.rasult);
 
         const filterAllNews = data.rasult.filter(
-          (pro) => pro.catagory === catagorys
+          (pro, key = pro._id) => pro.catagory === catagorys
         );
         setAllFindProduct(filterAllNews);
         // /////
@@ -57,20 +56,30 @@ const AllNews = () => {
     "tenis",
     "football",
     "hocky",
+    "covid",
+    "food",
   ];
   return (
     <div>
       <NavBar></NavBar>
-      <div className="container">
+      <div className="container ">
         {" "}
-        {thisCatagories.map((sCatagory) => (
-          <SelectCategoryWisesNews
-            catagory={sCatagory}
-            findNews={allFindNews.filter(
-              (n) => n.data.thisCatagory === sCatagory
-            )}
-          ></SelectCategoryWisesNews>
-        ))}
+        <div className="all_news_container">
+          {thisCatagories.map((sCatagory) => (
+            <SelectCategoryWisesNews
+              catagory={sCatagory}
+              findNews={allFindNews.filter(
+                (n) => n.data.thisCatagory === sCatagory
+              )}
+            ></SelectCategoryWisesNews>
+          ))}
+        </div>
+      </div>
+      <div
+        className="footer_another_side"
+        style={{ position: "relative", top: "22px" }}
+      >
+        <Footer></Footer>
       </div>
     </div>
   );

@@ -3,16 +3,13 @@ import React, { useContext } from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { UseProductContext } from "../../../App";
+import { UseProductContext, UserContext } from "../../../App";
 import NavBar from "../../Home/NavBar/NavBar";
+import ShortMail from "../ShortMail";
 import Dataa from "./Dataa/Dataa";
+import MakeAdmain from "./MakeAdmain/MakeAdmain";
 
 const Admain = () => {
-  const [news, setNews] = useContext(UseProductContext);
-  const [adddAdmain, setAddAdmain] = useState([]);
-
-  const [isAdmain, setIsAdmain] = useState({});
-  console.log(isAdmain);
   const [datas, setDatas] = useState([]);
 
   console.log(datas);
@@ -29,100 +26,102 @@ const Admain = () => {
 
     setDatas(catagoryData);
   };
-  // ////
-  useEffect(() => {
-    fetch("https://intense-anchorage-50845.herokuapp.com/addAdmain")
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-
-        setAddAdmain(data.rasult);
-      });
-    for (let i = 0; i < adddAdmain.length; i++) {
-      const element = adddAdmain[i];
-      setIsAdmain(element);
-    }
-  }, []);
 
   return (
     <>
       <NavBar></NavBar>
-      {isAdmain ? (
-        <div className="container">
-          <form onSubmit={handleSubmit(onSubmit)}>
-            <div className="">
-              <input
-                type="radio"
-                id="news"
-                name="fav_language"
-                value="news"
-                {...register("catagory", { required: true })}
-              />
-                <label for="news">News</label>
-              {errors.catagory && (
-                <>
-                  <br />{" "}
-                  <span style={{ color: "red", fontSize: "12px" }}>
-                    This field is required
-                  </span>
-                </>
-              )}
-              <br /> {" "}
-              <input
-                type="radio"
-                id="sports"
-                name="fav_language"
-                value="sports"
-                {...register("catagory", { required: true })}
-              />
-                <label for="sports">Sports</label>
-              {errors.catagory && (
-                <>
-                  <br />{" "}
-                  <span style={{ color: "red", fontSize: "12px" }}>
-                    This field is required
-                  </span>
-                </>
-              )}
-              <br /> {" "}
-              <input
-                type="radio"
-                id="health"
-                name="fav_language"
-                value="health"
-                {...register("catagory", { required: true })}
-              />
-                <label for="health">Health</label>
-              {errors.catagory && (
-                <>
-                  <br />{" "}
-                  <span style={{ color: "red", fontSize: "12px" }}>
-                    This field is required
-                  </span>
-                </>
-              )}
-              {/*  */}
-            </div>
-            {datas.catagory === "news" || datas.catagory === "sports" ? (
-              <input className="nav-link disabled" type="submit" />
-            ) : (
-              <input type="submit" className="btn btn-success" />
-            )}
-          </form>
 
-          <br />
-          <br />
-          {datas.catagory === "news" || datas.catagory === "sports" ? (
-            <Dataa datas={datas}></Dataa>
+      <div className="container" style={{ paddingTop: "5%" }}>
+        <h5>Chose's Categorys</h5>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <div className="">
+            <input
+              type="radio"
+              id="news"
+              name="fav_language"
+              value="news"
+              {...register("catagory", { required: true })}
+            />
+              <label for="news">News</label>
+            {errors.catagory && (
+              <>
+                <br />{" "}
+                <span style={{ color: "red", fontSize: "12px" }}>
+                  This field is required
+                </span>
+              </>
+            )}
+            <br /> {" "}
+            <input
+              type="radio"
+              id="sports"
+              name="fav_language"
+              value="sports"
+              {...register("catagory", { required: true })}
+            />
+              <label for="sports">Sports</label>
+            {errors.catagory && (
+              <>
+                <br />{" "}
+                <span style={{ color: "red", fontSize: "12px" }}>
+                  This field is required
+                </span>
+              </>
+            )}
+            <br /> {" "}
+            <input
+              type="radio"
+              id="health"
+              name="fav_language"
+              value="health"
+              {...register("catagory", { required: true })}
+            />
+              <label for="health">Health</label>
+            {errors.catagory && (
+              <>
+                <br />{" "}
+                <span style={{ color: "red", fontSize: "12px" }}>
+                  This field is required
+                </span>
+              </>
+            )}
+            {/*  */}
+          </div>
+          {datas.catagory === "news" ||
+          datas.catagory === "sports" ||
+          datas.catagory === "health" ? (
+            <input className="nav-link disabled" type="submit" />
           ) : (
-            <p style={{ color: "red" }}>Not attend</p>
+            <input type="submit" className="read_more_btn" />
           )}
+        </form>
+
+        <br />
+        <br />
+        {datas.catagory === "news" ||
+        datas.catagory === "sports" ||
+        datas.catagory === "health" ? (
+          <Dataa datas={datas}></Dataa>
+        ) : (
+          <p style={{ color: "red" }}>Not attend</p>
+        )}
+        <div style={{ display: "none" }}>
+          {" "}
+          <MakeAdmain></MakeAdmain>
         </div>
-      ) : (
-        <p>sorry</p>
-      )}
+      </div>
     </>
   );
 };
 
 export default Admain;
+
+/* <div className="container">
+<p style={{ textAlign: "center", color: "red" }}>
+  {" "}
+  I know you want to enter my admin page. But sorry you can't enter 😔
+  <br /> If you want to enter my admin pages, please send me a short
+  mail.. Thank you🙂
+</p>
+<ShortMail></ShortMail>
+</div> */

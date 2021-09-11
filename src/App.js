@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { createContext, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Home from "./Component/Home/Home/Home";
 // navbar open
@@ -15,13 +15,17 @@ import "@trendmicro/react-sidenav/dist/react-sidenav.css";
 
 import Admain from "./Component/Admain/Admain/Admain";
 import AllNews from "./Component/News/News/AllNews";
-import Navbar from "./Component/Navigation/Navbar/Navbar";
+
 import { FaBars, FaTimes } from "react-icons";
 import Newss from "./Component/News/News/Newss";
 import SelectedCategory from "./Component/News/SelectedCategory/SelectedCategory";
 import Login from "./Component/Firebase/Login/Login/Login";
 import PrivateRoute from "./Component/Firebase/Login/PrivateRoute/PrivateRoute";
 import MakeAdmain from "./Component/Admain/Admain/MakeAdmain/MakeAdmain";
+import FilterAdmain from "./Component/Admain/FilterAdmain";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import HeaderNavbar from "./Component/Navigation/HeaderNavbar/HeaderNavbar";
 // navbar close
 
 export const UseProductContext = createContext();
@@ -31,7 +35,12 @@ function App() {
   const [news, setNews] = useState([]);
   const [selcNews, setSelcNews] = useState([]);
   const [loginUser, setLoginUser] = useState({});
+  ////////////
 
+  useEffect(() => {
+    AOS.init({ duration: 2000 });
+  }, []);
+  /////////////
   return (
     <UserContext.Provider value={[loginUser, setLoginUser]}>
       <UseSelcNewsContext.Provider value={[selcNews, setSelcNews]}>
@@ -55,7 +64,8 @@ function App() {
                 <Route path="/:catagorys/id">
                   <SelectedCategory></SelectedCategory>
                 </Route>
-              )}{" "}
+              )}
+
               {/* <Route path="/:catagorys/id">
                 <SelectedCategory></SelectedCategory>
               </Route> */}
@@ -69,7 +79,7 @@ function App() {
                 <MakeAdmain></MakeAdmain>
               </PrivateRoute>
               <Route path="/nav">
-                <Navbar></Navbar>
+                <HeaderNavbar></HeaderNavbar>
               </Route>
               <Route path="/login">
                 <Login></Login>

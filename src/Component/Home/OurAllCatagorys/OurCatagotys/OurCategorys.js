@@ -37,7 +37,7 @@ const OurCategorys = () => {
         <Carousel responsive={responsive}>
           <Link to="/all-news/news">
             {" "}
-            <div className="single_categoryss" style={{}}>
+            <div className="single_categoryss">
               <img src={newsImg} alt="" />
               <p>News</p>
             </div>

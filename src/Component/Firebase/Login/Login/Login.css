@@ -1,0 +1,25 @@
+.login-btn {
+  padding: 4px 18px;
+  background-color: #0d84b3;
+  border: none;
+  border-radius: 5px;
+  color: white;
+}
+.login-btn:hover {
+  background-color: #0a6285;
+}
+.logout-btn {
+  padding: 4px 16px;
+  background-color: brown;
+  border: none;
+  border-radius: 5px;
+  color: white;
+}
+.logout-btn:hover {
+  background-color: #941414;
+}
+.login-page {
+  background-color: white !important;
+  height: 100vh !important;
+  overflow-y: auto;
+}

@@ -1,6 +1,55 @@
-.homes .container {
+.our_all_catagorys_container .container {
   background-color: white !important;
-
+  padding: 0 2%;
   overflow-y: auto;
+}
+.newss_container {
+  /* height: 100vh;
+  overflow-y: auto; */
   padding-left: 2%;
+}
+.all_news_container {
+  /* height: 100vh;
+  overflow-y: auto; */
+  padding-left: 2%;
+}
+.selected_category_container.container {
+  padding-left: 2%;
+}
+@media (max-width: 775px) {
+  .newss_container {
+    padding-left: 10% !important;
+  }
+}
+@media (max-width: 575px) {
+  .newss_container {
+    padding-left: 18% !important;
+  }
+}
+@media (max-width: 660px) {
+  .all_news_container {
+    padding-left: 10% !important;
+  }
+}
+@media (max-width: 502px) {
+  .all_news_container {
+    padding-left: 17% !important;
+  }
+}
+
+@media (max-width: 575px) {
+  .container {
+    padding: 0 6% !important;
+  }
+}
+div {
+  text-decoration: none;
+}
+@media (max-width: 662px) {
+  .footer_another_side {
+    padding-left: 10%;
+  }
+  .selected_category_container {
+    padding-left: 20%;
+  }
 }

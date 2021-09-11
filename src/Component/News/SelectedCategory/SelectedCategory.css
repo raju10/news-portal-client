@@ -1,9 +1,16 @@
 .seltedCatagory p {
   color: gray;
   font-size: 12px;
+  font-family: monospace;
+}
+.seltedCatagory h4 {
+  color: #111;
+  font-size: 23px;
+  font-weight: 500;
+  padding: 1% 0;
 }
 .selceted_news_description {
   padding-left: 4%;
-  padding-top: 4%;
+  padding-top: 3%;
   padding-bottom: 4%;
 }

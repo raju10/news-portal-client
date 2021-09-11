@@ -1,18 +1,23 @@
 import React from "react";
-import Navbar from "../../Navigation/Navbar/Navbar";
-import AllNews from "../../News/News/AllNews";
-import NavBar from "../NavBar/NavBar";
+import HeaderNavbar from "../../Navigation/HeaderNavbar/HeaderNavbar";
+
+import Ards from "../Ards/Ards";
+import Footer from "../Footer/Footer";
+
 import OurAllCatagorys from "../OurAllCatagorys/OurAllCatagorys";
-import OurCategorys from "../OurAllCatagorys/OurCatagotys/OurCategorys";
+
+import OurCategory from "../OurAllCatagorys/OurCategory/OurCategory";
 
 const Home = () => {
   return (
     <div className="homes">
-      {/* <NavBar></NavBar> */}
+      <HeaderNavbar></HeaderNavbar>
 
-      <Navbar></Navbar>
-      <OurCategorys></OurCategorys>
+      <OurCategory></OurCategory>
+
       <OurAllCatagorys></OurAllCatagorys>
+      <Ards></Ards>
+      <Footer></Footer>
     </div>
   );
 };

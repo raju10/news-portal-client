@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import NavBar from "../../../Home/NavBar/NavBar";
+import ShortMail from "../../ShortMail";
 import MakeAdmainInput from "./MakeAdmainInput/MakeAdmainInput";
 
 const MakeAdmain = () => {

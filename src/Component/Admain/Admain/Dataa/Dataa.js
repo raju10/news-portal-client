@@ -47,6 +47,7 @@ const Dataa = ({ datas }) => {
   ///img upload functions close//
   return (
     <div>
+      <h5>Plese creating a new post</h5>
       <form onSubmit={handleSubmit(onSubmit)}>
         {(datas.catagory === "news" && (
           <>
@@ -84,6 +85,23 @@ const Dataa = ({ datas }) => {
                 <span className="text-danger">This field is required</span>
               )}
             </>
+          )) ||
+          (datas.catagory === "health" && (
+            <>
+              <select
+                className="form-control w-50"
+                {...register("thisCatagory", { required: true })}
+              >
+                <option disabled={true} value="Not set">
+                  Select Option
+                </option>
+                <option value="covid">Covid</option>
+                <option value="food">Food</option>
+              </select>
+              {errors.sportsCatagory && (
+                <span className="text-danger">This field is required</span>
+              )}
+            </>
           ))}
         <input
           {...register("title", { required: true })}
@@ -110,7 +128,7 @@ const Dataa = ({ datas }) => {
         />
         {/* {errors.img && <span>Image is required</span>} */}
         <br />
-        <input type="submit" />
+        <input type="submit" className="read_more_btn" />
       </form>
     </div>
   );
