@@ -16,10 +16,10 @@ const Admain = () => {
 
   const [datas, setDatas] = useState([]);
 
-  console.log(datas);
+  // console.log(datas);
 
   const [addAdmain, setAddAdmain] = useState([]);
-  console.log("adddAdmain", addAdmain);
+  // console.log("adddAdmain", addAdmain);
   const {
     register,
     handleSubmit,
@@ -37,7 +37,7 @@ const Admain = () => {
   useEffect(() => {
     axios("https://intense-anchorage-50845.herokuapp.com/addAdmain").then(
       (data) => {
-        console.log(data.rasult);
+        // console.log(data.rasult);
         setAddAdmain(data.rasult);
       }
     );
@@ -51,7 +51,7 @@ const Admain = () => {
         `https://intense-anchorage-50845.herokuapp.com/addAdmain/isAdmain/${loginUser.loginUserEmail}`
       )
       .then(({ data }) => {
-        console.log(data);
+        // console.log(data);
         if (data.data.length) {
           setIsAdmain(true);
           Swal.fire("Now you can to enter my admin pages", "Thnq", "success");

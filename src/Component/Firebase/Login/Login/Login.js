@@ -14,8 +14,6 @@ firebase.initializeApp(firebaseConfig);
 const Login = () => {
   const [loginUser, setLoginUser] = useContext(UserContext);
 
-  
-
   const history = useHistory();
   const location = useLocation();
   const { from } = location.state || { from: { pathname: "/" } };
@@ -46,7 +44,7 @@ const Login = () => {
         var email = error.email;
 
         var credential = error.credential;
-        console.log(errorCode, errorMessage);
+        // console.log(errorCode, errorMessage);
       });
     // const signinUserToken = () => {
     //   firebase

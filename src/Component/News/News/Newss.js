@@ -22,7 +22,7 @@ const Newss = () => {
       .then((res) => res.json())
       .then((data) => {
         const filterNews = data.rasult.filter(
-          (pro, key = pro._id) => pro.data.thisCatagory === catagorys
+          (pro) => pro.data.thisCatagory === catagorys
         );
         setFindNews(filterNews);
       });

@@ -26,6 +26,7 @@ import FilterAdmain from "./Component/Admain/FilterAdmain";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import HeaderNavbar from "./Component/Navigation/HeaderNavbar/HeaderNavbar";
+import NewAdmain from "./Component/NewAdmain/NewAdmain";
 // navbar close
 
 export const UseProductContext = createContext();
@@ -83,6 +84,9 @@ function App() {
               </Route>
               <Route path="/login">
                 <Login></Login>
+              </Route>
+              <Route path="/raju">
+                <NewAdmain></NewAdmain>
               </Route>
               {/* navbar open*/}
               <Route

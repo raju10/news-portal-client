@@ -15,7 +15,7 @@ const MakeAdmain = () => {
         `https://intense-anchorage-50845.herokuapp.com/addAdmain/isAdmain/${loginUser.loginUserEmail}`
       )
       .then(({ data }) => {
-        console.log(data);
+        // console.log(data);
         if (data.data.length) {
           Swal.fire("Now you can to enter my admin pages", "Thnq", "success");
           setIsAdmain(true);

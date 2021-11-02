@@ -58,7 +58,7 @@ const OurCategory = () => {
           >
             {" "}
             <h6 style={{ textDecoration: "none" }}>
-              The Features of the Best Ergonomic Keyboard
+              The Features of the Best Ergonomic
             </h6>{" "}
           </Link>
         </div>

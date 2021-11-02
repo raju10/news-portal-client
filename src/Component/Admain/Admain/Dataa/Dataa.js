@@ -16,13 +16,13 @@ const Dataa = ({ datas }) => {
   } = useForm();
   const onSubmit = (data, e) => {
     const allData = { ...datas, data, imgUrl, loginUser };
-    console.log(allData);
+    // console.log(allData);
     // https://intense-anchorage-50845.herokuapp.com
     axios
       .post("https://intense-anchorage-50845.herokuapp.com/news", allData)
 
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         if (data) {
           Swal.fire("Your post creating succesfully", "Thnq", "success");
         }
